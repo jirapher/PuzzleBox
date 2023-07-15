@@ -14,10 +14,25 @@ public class CharController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    /*private void Update()
+    {
+        if(Input.mouseScrollDelta.y != 0)
+        {
+            ReadScroll();
+        }
+    }*/
+
+    private void ReadScroll()
+    {
+        float v = Input.mouseScrollDelta.y;
+        if(v > 0) { AudioManager.instance.PitchUp(); } else { AudioManager.instance.PitchDown(); }
+    }
+
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
+
     private void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
@@ -25,6 +40,6 @@ public class CharController : MonoBehaviour
 
     void OnFire()
     {
-        print("Shot fired.");
+        //print("Shot fired.");
     }
 }
