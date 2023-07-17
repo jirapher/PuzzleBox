@@ -7,11 +7,20 @@ public class CharController : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     private Vector2 moveInput = Vector2.zero;
+    private Vector2 lastMoveInput = Vector2.zero;
     private Rigidbody2D rb;
+
+    private Animator anim;
+    private string inputX = "InputX", inputY = "InputY", lastX = "LastMoveX", lastY = "LastMoveY";
+    private bool walking = false;
+
+    private bool atkCoolDown = false;
+    public bool ignoreInput = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     /*private void Update()
@@ -35,11 +44,42 @@ public class CharController : MonoBehaviour
 
     private void OnMove(InputValue value)
     {
+        if (ignoreInput) { return; }
+
         moveInput = value.Get<Vector2>();
+
+        if(moveInput == lastMoveInput) { return; }
+
+        if (moveInput == Vector2.zero) { walking = false; } else { walking = true; }
+
+        lastMoveInput = moveInput;
+
+        UpdateAnim();
+    }
+
+    private void UpdateAnim()
+    {
+        anim.SetFloat(inputX, moveInput.x);
+        anim.SetFloat(inputY, moveInput.y);
+        anim.SetBool("Walking", walking);
+
+        if(lastMoveInput == Vector2.zero) { return; }
+
+        anim.SetFloat(lastX, moveInput.x);
+        anim.SetFloat(lastY, moveInput.y);
     }
 
     void OnFire()
     {
-        //print("Shot fired.");
+        if (atkCoolDown || ignoreInput) { return; }
+
+        anim.SetTrigger("Attack");
+        atkCoolDown = true;
+        Invoke("AttackCooldown", 0.5f);
+    }
+
+    private void AttackCooldown()
+    {
+        atkCoolDown = false;
     }
 }

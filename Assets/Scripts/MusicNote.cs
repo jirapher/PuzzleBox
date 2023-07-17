@@ -25,5 +25,6 @@ public class MusicNote : MonoBehaviour
     public void SwitchNote(int newNote)
     {
         noteNum = possibleNotes[newNote];
+        PlayClip();
     }
 }

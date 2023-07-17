@@ -59,6 +59,7 @@ public class MusicScoreManager : MonoBehaviour
 
         if(Input.GetMouseButton(0) && dragging)
         {
+            if(draggedItem == null) { return; }
             Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             newPos.z = 0;
             draggedItem.transform.position = newPos;

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Note
   - Populator
+  - Broom
+  - Pushable
   layers:
   - Default
   - TransparentFX

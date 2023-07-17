@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\DialogManager2.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\InputRecorder.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\Scrapped Dialog\DialogManager.cs" />
+    <Compile Include="Assets\Scripts\Pushable.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\Scrapped Dialog\DialogButton.cs" />
     <Compile Include="Assets\Scripts\MusicNote.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\AudioRecord.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\Scripts\NotePicker.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\StashedData.cs" />
     <Compile Include="Assets\Scripts\MusicScoreManager.cs" />
+    <Compile Include="Assets\Scripts\BroomBehavior.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -782,6 +784,12 @@
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
