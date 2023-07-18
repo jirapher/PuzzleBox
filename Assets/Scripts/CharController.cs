@@ -15,12 +15,22 @@ public class CharController : MonoBehaviour
     private bool walking = false;
 
     private bool atkCoolDown = false;
-    public bool ignoreInput = false;
+    private bool ignoreInput = false;
+
+    public static CharController instance;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        if(instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
     }
 
     /*private void Update()
@@ -39,6 +49,7 @@ public class CharController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(ignoreInput || atkCoolDown) { return; }
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
 
@@ -71,15 +82,27 @@ public class CharController : MonoBehaviour
 
     void OnFire()
     {
-        if (atkCoolDown || ignoreInput) { return; }
+        //if (atkCoolDown || ignoreInput) { return; }
 
         anim.SetTrigger("Attack");
         atkCoolDown = true;
-        Invoke("AttackCooldown", 0.5f);
+        Invoke("AttackCooldown", 0.8f);
     }
 
     private void AttackCooldown()
     {
         atkCoolDown = false;
+    }
+
+    public void SetIgnoreInput()
+    {
+        moveInput = Vector2.zero;
+        anim.SetBool("Walking", false);
+        ignoreInput = true;
+    }
+
+    public void IgnoreInputOff()
+    {
+        ignoreInput = false;
     }
 }

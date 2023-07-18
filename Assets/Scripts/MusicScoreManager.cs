@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MusicScoreManager : MonoBehaviour
 {
     public bool musicMenuUp = false;
+    public CharController player;
 
     [Header("Note Handling")]
     public LayerMask selectableLayer;
@@ -20,10 +23,23 @@ public class MusicScoreManager : MonoBehaviour
     public Transform[] populatorPositions;
     private int nextPopulatorPosition = 0;
 
+    [Header("Raycast Redo")]
+    public PointerEventData ped;
+    public GraphicRaycaster ray;
+    public EventSystem events;
 
     private void Start()
     {
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+
         musicMenuUp = false;
     }
     private void Update()
@@ -32,36 +48,40 @@ public class MusicScoreManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D ray = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), 10f, selectableLayer);
-            string tag = ray.transform.tag;
-
-            if (ray.transform.tag == "Note")
+            
+            foreach(RaycastResult r in UIRaycast())
             {
-                SetNoteDrag(ray.transform.gameObject);
-            }
+                if(r.gameObject.tag == "Note")
+                {
+                    SetNoteDrag(r.gameObject);
+                }
 
-            if (ray.transform.tag == "Populator")
-            {
-                PopulateNote(ray.transform.gameObject);
+                if (r.gameObject.tag == "Populator")
+                {
+                    PopulateNote(r.gameObject);
+                }
             }
 
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            RaycastHit2D ray = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), 10f, selectableLayer);
 
-            if (ray.transform.tag == "Note")
+            foreach (RaycastResult r in UIRaycast())
             {
-                DeleteNote(ray.transform.gameObject);
+                if (r.gameObject.tag == "Note")
+                {
+                    DeleteNote(r.gameObject);
+                }
             }
         }
 
         if(Input.GetMouseButton(0) && dragging)
         {
             if(draggedItem == null) { return; }
-            Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            newPos.z = 0;
+            //Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 newPos = Input.mousePosition;
+            //newPos.z = 0;
             draggedItem.transform.position = newPos;
         }
 
@@ -71,6 +91,15 @@ public class MusicScoreManager : MonoBehaviour
             draggedItem = null;
             dragging = false;
         }
+    }
+
+    private List<RaycastResult> UIRaycast()
+    {
+        ped = new PointerEventData(events);
+        ped.position = Input.mousePosition;
+        List<RaycastResult> results = new List<RaycastResult>();
+        ray.Raycast(ped, results);
+        return results;
     }
 
     private void SetNoteDrag(GameObject note)
@@ -126,6 +155,7 @@ public class MusicScoreManager : MonoBehaviour
     public void TurnOnMusicMan()
     {
         musicMenuUp = true;
+        player.SetIgnoreInput();
         if(allCurrentNotes.Count > 0)
         {
             foreach(GameObject n in allCurrentNotes)
@@ -137,6 +167,8 @@ public class MusicScoreManager : MonoBehaviour
 
     public void TurnOffMusicMan()
     {
+        player.IgnoreInputOff();
+
         if (allCurrentNotes.Count > 0)
         {
             foreach (GameObject n in allCurrentNotes)

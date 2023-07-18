@@ -14,9 +14,19 @@ public class DialogManager2 : MonoBehaviour
     public Image curPortrait;
     public GameObject dialogPanel;
     public bool dialogActive = false;
+
+    public CharController player;
     private void Start()
     {
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this);
+            instance = this;
+        }
         curText.text = "";
         curLine = 0;
     }
@@ -37,6 +47,7 @@ public class DialogManager2 : MonoBehaviour
         allLines = lines;
         curPortrait.sprite = pic;
         StartDialog();
+        player.SetIgnoreInput();
     }
 
     private void StartDialog()
@@ -54,6 +65,7 @@ public class DialogManager2 : MonoBehaviour
         allLines = new string[0];
         dialogActive = false;
         dialogPanel.SetActive(false);
+        player.IgnoreInputOff();
     }
 
     public void AdvanceDialog()

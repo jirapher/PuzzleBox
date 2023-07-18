@@ -11,11 +11,18 @@ public class AudioManager : MonoBehaviour
     public AudioSource[] allInstruments;
 
     private int curInstrumentNum = 0;
+
     private void Start()
     {
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
     }
-
     public void PlaySound(AudioSource sound)
     {
         sound.PlayOneShot(sound.clip);

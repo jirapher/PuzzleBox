@@ -24,7 +24,7 @@ public class StaticNoteSelector : MonoBehaviour
 
     public GameObject PopulateNote()
     {
-        GameObject g = Instantiate(notePrefab, transform.position, Quaternion.identity, MusicScoreManager.instance.cloneHolder.transform);
+        GameObject g = Instantiate(notePrefab, GetComponent<RectTransform>().position, Quaternion.identity, MusicScoreManager.instance.cloneHolder.transform);
         return g;
     }
 

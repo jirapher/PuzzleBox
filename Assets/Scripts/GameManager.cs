@@ -9,21 +9,21 @@ public class GameManager : MonoBehaviour
     public CharController charController;
     public MusicScoreManager musicMan;
     public static GameManager instance;
-
+    public Timer timer;
     public GameObject musicInterface;
     private void Start()
     {
-        if (instance == null)
+        if (instance != null && instance != this)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(this.gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            instance = this;
+            DontDestroyOnLoad(this);
         }
-
         CloseMusicInterface();
+        timer.StartTimer();
     }
 
     public void InstrumentUnlocked(int instrumentNum)
