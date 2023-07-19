@@ -56,14 +56,21 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\DirtScratch\SpriteMaskDraw.cs" />
     <Compile Include="Assets\Scripts\Drawing.cs" />
     <Compile Include="Assets\Scripts\BarTracker.cs" />
     <Compile Include="Assets\Scripts\StaticNoteSelector.cs" />
+    <Compile Include="Assets\Scripts\DontDestroy.cs" />
     <Compile Include="Assets\Scripts\DialogManager2.cs" />
+    <Compile Include="Assets\Scripts\DirtScratch\TouchDraw.cs" />
+    <Compile Include="Assets\Scripts\ManagerManager.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\InputRecorder.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\Scrapped Dialog\DialogManager.cs" />
     <Compile Include="Assets\Scripts\Pushable.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\Scrapped Dialog\DialogButton.cs" />
+    <Compile Include="Assets\Scripts\TimerToken.cs" />
+    <Compile Include="Assets\Scripts\CamTransition.cs" />
+    <Compile Include="Assets\Scripts\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\MusicNote.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\AudioRecord.cs" />
     <Compile Include="Assets\Scripts\CharController.cs" />
@@ -75,19 +82,12 @@
     <Compile Include="Assets\Scripts\NotePicker.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\StashedData.cs" />
     <Compile Include="Assets\Scripts\Dirt Growth Approach\DirtController.cs" />
+    <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\PlayerPosOnLoad.cs" />
     <Compile Include="Assets\Scripts\MusicScoreManager.cs" />
     <Compile Include="Assets\Scripts\BroomBehavior.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\DirtScratch\SpriteMaskDraw.cs" />
-    <Compile Include="Assets\Scripts\DirtScratch\TouchDraw.cs" />
-    <Compile Include="Assets\Scripts\SceneTransition.cs" />
-    <Compile Include="Assets\Scripts\CamTransition.cs" />
-    <Compile Include="Assets\Scripts\PlayerPosOnLoad.cs" />
-    <Compile Include="Assets\Scripts\DontDestroy.cs" />
-    <Compile Include="Assets\Scripts\Timer.cs" />
-    <Compile Include="Assets\Scripts\TimerToken.cs" />
-    <Compile Include="Assets\Scripts\ManagerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class CamTransition : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class CamTransition : MonoBehaviour
 
     public string transitionName;
     public static CamTransition instance;
+
+    public CinemachineConfiner2D camBounds;
     private void Start()
     {
         if (instance != null && instance != this)
@@ -22,7 +25,17 @@ public class CamTransition : MonoBehaviour
             DontDestroyOnLoad(this);
             instance = this;
         }
+
+        UpdateCamBounds();
+        
         blackFade.color = Color.clear;
+    }
+
+    private void UpdateCamBounds()
+    {
+        camBounds.VirtualCamera.PreviousStateIsValid = false;
+        camBounds.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CamBounds").GetComponent<PolygonCollider2D>();
+        camBounds.InvalidateCache();
     }
 
     public IEnumerator Fade(float fadeTo, bool shouldLoadSceen, int sceneToLoad)
@@ -48,7 +61,6 @@ public class CamTransition : MonoBehaviour
 
     public void FadeIn()
     {
-        print("fade in called");
         StartCoroutine(Fade(0, false, 0));
         player.GetComponent<CharController>().IgnoreInputOff();
     }
