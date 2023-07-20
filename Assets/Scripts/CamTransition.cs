@@ -8,39 +8,31 @@ public class CamTransition : MonoBehaviour
 {
     public SpriteRenderer blackFade;
     public float fadeDuration = 1f;
-    public GameObject player;
 
     public string transitionName;
     public static CamTransition instance;
+    public CinemachineVirtualCamera vcam;
 
-    public CinemachineConfiner2D camBounds;
+    //public CinemachineConfiner2D camBounds;
     private void Start()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(this);
-            instance = this;
-        }
-
-        UpdateCamBounds();
-        
-        blackFade.color = Color.clear;
+        blackFade.color = Color.black;
+        FadeIn();
+        vcam.Follow = GameManager.instance.GetPlayer().gameObject.transform;
+        vcam.LookAt = GameManager.instance.GetPlayer().gameObject.transform;
     }
 
-    private void UpdateCamBounds()
+    /*public void UpdateCamBounds()
     {
         camBounds.VirtualCamera.PreviousStateIsValid = false;
         camBounds.m_BoundingShape2D = GameObject.FindGameObjectWithTag("CamBounds").GetComponent<PolygonCollider2D>();
         camBounds.InvalidateCache();
-    }
+    }*/
 
     public IEnumerator Fade(float fadeTo, bool shouldLoadSceen, int sceneToLoad)
     {
-        player.GetComponent<CharController>().SetIgnoreInput();
+        //player.GetComponent<CharController>().SetIgnoreInput();
+        GameManager.instance.GetPlayer().SetIgnoreInput();
         Color initCol = blackFade.color;
         Color targetCol = new Color(initCol.r, initCol.g, initCol.b, fadeTo);
 
@@ -61,7 +53,8 @@ public class CamTransition : MonoBehaviour
 
     public void FadeIn()
     {
+        GameManager.instance.GetPlayer().gameObject.transform.position = FindObjectOfType<PlayerPosOnLoad>().transform.position;
         StartCoroutine(Fade(0, false, 0));
-        player.GetComponent<CharController>().IgnoreInputOff();
+        GameManager.instance.GetPlayer().IgnoreInputOff();
     }
 }

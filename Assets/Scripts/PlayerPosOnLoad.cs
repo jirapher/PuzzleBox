@@ -10,12 +10,12 @@ public class PlayerPosOnLoad : MonoBehaviour
 
     private void Start()
     {
-        CamTransition cam = Camera.main.GetComponent<CamTransition>();
+        //CamTransition cam = Camera.main.GetComponent<CamTransition>();
 
-        if(cam.transitionName == transitionName)
+        /*if(cam.transitionName == transitionName)
         {
             cam.FadeIn();
             FindObjectOfType<CharController>().transform.position = this.transform.position;
-        }
+        }*/
     }
 }

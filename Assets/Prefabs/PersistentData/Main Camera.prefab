@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9034471552658703908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.041037, y: -0.16400012, z: -10}
+  m_LocalPosition: {x: 12.784472, y: -0.20992032, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -170,9 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackFade: {fileID: 9034471552720500751}
   fadeDuration: 1
-  player: {fileID: 0}
   transitionName: 
-  camBounds: {fileID: 0}
+  vcam: {fileID: 9034471553408364204}
 --- !u!1 &9034471552720500750
 GameObject:
   m_ObjectHideFlags: 0

@@ -82,7 +82,7 @@ public class CharController : MonoBehaviour
 
     void OnFire()
     {
-        //if (atkCoolDown || ignoreInput) { return; }
+        if (atkCoolDown || ignoreInput) { return; }
 
         anim.SetTrigger("Attack");
         atkCoolDown = true;

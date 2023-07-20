@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class StaticNoteSelector : MonoBehaviour
+{
+    public GameObject notePrefab;
+
+    public GameObject PopulateNote()
+    {
+        GameObject g = Instantiate(notePrefab, GetComponent<RectTransform>().position, Quaternion.identity, MusicScoreManager.instance.cloneHolder.transform);
+        return g;
+    }
+
+    /*private void OnMouseEnter()
+    {
+        SetHighlight();
+    }
+
+    private void OnMouseExit()
+    {
+        HighlightOff();
+    }*/
+
+}
