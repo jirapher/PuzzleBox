@@ -5,7 +5,7 @@ using UnityEngine;
 public class DirtController : MonoBehaviour
 {
     public float dirtAmount = 1;
-    private float clean = 1f, dirty = 0f;
+    private float clean = .75f, dirty = 0f;
     private Material mat;
 
     public float adjAmt = 0.1f;

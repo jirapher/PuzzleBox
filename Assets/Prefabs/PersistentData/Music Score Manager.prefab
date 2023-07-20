@@ -3625,8 +3625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.49300003, y: 0.49500003}
   m_AnchorMax: {x: 0.5064789, y: 0.503}
-  m_AnchoredPosition: {x: -12.268761, y: -0.025380135}
-  m_SizeDelta: {x: -24.96297, y: -7.1293}
+  m_AnchoredPosition: {x: -12.190062, y: -0.025380135}
+  m_SizeDelta: {x: -24.96297, y: -7.141782}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &7254724472195400773
 Rigidbody2D:

@@ -11,6 +11,9 @@ public class Speaker : MonoBehaviour
     private bool canSpeak = false;
     private bool ignore = false;
 
+    [Header("Instrument")]
+    public bool isInstrument;
+
     private void Start()
     {
         if(charSprite == null)

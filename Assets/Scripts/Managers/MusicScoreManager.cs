@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MusicScoreManager : MonoBehaviour
 {
@@ -20,6 +19,7 @@ public class MusicScoreManager : MonoBehaviour
 
     [Header("Populators")]
     public GameObject[] allPopulators;
+    public bool[] populatorUnlock;
     public Transform[] populatorPositions;
     private int nextPopulatorPosition = 0;
 
@@ -39,6 +39,9 @@ public class MusicScoreManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
         }
+
+        InitPopUnlock();
+        
 
         musicMenuUp = false;
     }
@@ -92,6 +95,16 @@ public class MusicScoreManager : MonoBehaviour
             draggedItem.transform.position = new Vector3(draggedItem.transform.position.x, draggedItem.transform.position.y, 0);
             draggedItem = null;
             dragging = false;
+        }
+    }
+
+    private void InitPopUnlock()
+    {
+        populatorUnlock = new bool[allPopulators.Length];
+
+        for(int i = 0; i < populatorUnlock.Length; i++)
+        {
+            populatorUnlock[i] = false;
         }
     }
 
@@ -185,8 +198,17 @@ public class MusicScoreManager : MonoBehaviour
 
     public void UnlockInstrument(int instrumentNum)
     {
+        if (populatorUnlock[instrumentNum] == true) { return; }
+
         Instantiate(allPopulators[instrumentNum], populatorPositions[nextPopulatorPosition].position, Quaternion.identity, populatorPositions[nextPopulatorPosition]);
+        populatorUnlock[instrumentNum] = true;
         nextPopulatorPosition++;
+
+        if(nextPopulatorPosition >= populatorPositions.Length)
+        {
+            //WHAT DO?!
+            print("You've used up your positions");
+        }
     }
 
 

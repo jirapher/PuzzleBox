@@ -25,7 +25,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DirtTexture:
-        m_Texture: {fileID: 2800000, guid: 777ce94b885128a49a4861643b34832a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e795ad26d17ea284d90dd7fa91c5f6ac, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -64,7 +64,7 @@ Material:
     m_Floats:
     - _AlphaTest: 1
     - _DirtAmount: 0
-    - _DirtScale: 18
+    - _DirtScale: 17
     - _EnableExternalAlpha: 0
     - _OutlineAmount: 0.1
     - _SnowAmount: 0.44
