@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class DirtController : MonoBehaviour
 {
+
+    //Instead start at .75 and work down to zero.
+
     public float dirtAmount = 1;
-    private float clean = .75f, dirty = 0f;
+    private float clean = 0f, dirty = 0.8f;
     private Material mat;
 
     public float adjAmt = 0.1f;
@@ -13,11 +16,13 @@ public class DirtController : MonoBehaviour
     public GameObject itemTospawn;
 
     private bool justBrushed = false;
+    private SpriteRenderer sr;
     //public bool dirtGrowing = false;
-
+    private bool cleaned = false;
     private void Start()
     {
-        mat = GetComponent<SpriteRenderer>().material;
+        sr = GetComponent<SpriteRenderer>();
+        mat = sr.material;
         dirtAmount = dirty;
         SetDirt();
     }
@@ -33,9 +38,9 @@ public class DirtController : MonoBehaviour
 
     private void SubtractDirt()
     {
-        dirtAmount += adjAmt;
+        dirtAmount -= adjAmt;
 
-        if(dirtAmount >= clean)
+        if(dirtAmount <= clean)
         {
             //it's clean
             Cleaned();
@@ -49,9 +54,24 @@ public class DirtController : MonoBehaviour
 
     private void Cleaned()
     {
-        particles.SetActive(true);
+        if (cleaned) { return; }
+        cleaned = true;
         SpawnPrize();
+        StartCoroutine(FadeSprite());
+        particles.SetActive(true);
+        BlobTracker.instance.AddBlob(gameObject.GetInstanceID().ToString());
         Destroy(this.gameObject, 1.5f);
+    }
+
+    private IEnumerator FadeSprite()
+    {
+        float alpha = sr.color.a;
+        for(float t = 0; t < 1f; t += Time.deltaTime / 1.3f)
+        {
+            Color newCol = new Color(1, 1, 1, Mathf.Lerp(alpha, 0, t));
+            sr.color = newCol;
+            yield return null;
+        }
     }
 
     private void SetDirt()
@@ -66,6 +86,7 @@ public class DirtController : MonoBehaviour
 
     private void SpawnPrize()
     {
+        print("Should have spawned prize");
         Instantiate(itemTospawn, transform.position, Quaternion.identity, null);
     }
 }

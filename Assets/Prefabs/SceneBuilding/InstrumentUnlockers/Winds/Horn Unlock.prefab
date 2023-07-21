@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8642527388889396621}
   - component: {fileID: 8642527388889396622}
   m_Layer: 0
-  m_Name: Instrument Unlocker 2
+  m_Name: Horn Unlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0.27044016, b: 0.94423497, a: 1}
+  m_Sprite: {fileID: -1890681301, guid: cb6b092170f0f1847822e9e9c64125c5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,11 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - HOLY MOTHER!
-  - You found a harp.
-  - SHRED SOME STRINGS DADDY-O!
-  charName: Harpy
-  charSprite: {fileID: 1627596561, guid: 0631d436f227b2245b95920338efd21f, type: 3}
+  - Neat, some kind of Earth-style horn
+  charName: Horn
+  charSprite: {fileID: -1890681301, guid: cb6b092170f0f1847822e9e9c64125c5, type: 3}
+  isInstrument: 1
 --- !u!114 &8642527388889396618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5247b58f0d7a04da1465566c52d358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instrumentNum: 1
+  instrumentNum: 5
 --- !u!70 &8642527388889396621
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

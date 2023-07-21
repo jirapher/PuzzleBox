@@ -101,11 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hot dang!
-  - You found a Steinway in some brain goop!
-  - (you pocket a grand piano)
+  - Think I saw one of these on Earth. A piano, right?
   charName: Piano
   charSprite: {fileID: -309494028, guid: cb6b092170f0f1847822e9e9c64125c5, type: 3}
+  isInstrument: 1
 --- !u!114 &8642527388889396618
 MonoBehaviour:
   m_ObjectHideFlags: 0

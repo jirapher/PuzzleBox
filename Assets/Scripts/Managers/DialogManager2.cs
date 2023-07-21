@@ -15,7 +15,12 @@ public class DialogManager2 : MonoBehaviour
     public GameObject dialogPanel;
     public bool dialogActive = false;
 
+    public bool csDialog = false;
     public CharController player;
+    public RectTransform portPos1, portPos2;
+    private bool portAtPos1 = true;
+    private GameObject unlockInstrumentObj;
+    private bool instrumentDialog = false;
     private void Start()
     {
         if (instance != null && instance != this)
@@ -49,8 +54,20 @@ public class DialogManager2 : MonoBehaviour
         player.SetIgnoreInput();
     }
 
+    public void StartInstrumentDialog(string[] lines, Sprite pic, string name, GameObject instrument)
+    {
+        unlockInstrumentObj = instrument;
+        instrumentDialog = true;
+        nameText.text = name;
+        allLines = lines;
+        curPortrait.sprite = pic;
+        StartDialog();
+        player.SetIgnoreInput();
+    }
+
     public void StartCSDialog(string[] lines, Sprite pic, string name)
     {
+        csDialog = true;
         nameText.text = name;
         allLines = lines;
         curPortrait.sprite = pic;
@@ -68,6 +85,17 @@ public class DialogManager2 : MonoBehaviour
 
     public void EndDialog()
     {
+        if (instrumentDialog)
+        {
+            Destroy(unlockInstrumentObj);
+        }
+
+        if (csDialog)
+        {
+            SwapPortraitPosition();
+        }
+
+        instrumentDialog = false;
         curText.text = "";
         curLine = 0;
         allLines = new string[0];
@@ -75,6 +103,24 @@ public class DialogManager2 : MonoBehaviour
         dialogPanel.SetActive(false);
         player.IgnoreInputOff();
         GameManager.instance.ResumeTimer();
+    }
+
+    public void SwapPortraitPosition()
+    {
+        if (portAtPos1)
+        {
+            curPortrait.GetComponent<RectTransform>().position = portPos2.position;
+            portAtPos1 = false;
+        }
+        else
+        {
+            curPortrait.GetComponent<RectTransform>().position = portPos1.position;
+        }
+    }
+
+    public void PortraitBackToPos1()
+    {
+        curPortrait.rectTransform.anchoredPosition = portPos1.anchoredPosition;
     }
 
     public void AdvanceDialog()

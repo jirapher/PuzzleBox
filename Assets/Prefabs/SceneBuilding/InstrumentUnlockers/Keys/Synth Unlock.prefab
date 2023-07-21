@@ -101,13 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hey, hey, how many synth players does it take to screw in a lightbulb?
-  - Eight.
-  - One to screw the lightbulb in and seven to fight off the guitarists that want
-    to stand directly under it.
-  - Badum-chhhh!
+  - Cool, must be one of those new musical synthesizers
   charName: Synth
   charSprite: {fileID: -1749691352, guid: cb6b092170f0f1847822e9e9c64125c5, type: 3}
+  isInstrument: 1
 --- !u!114 &8642527388889396618
 MonoBehaviour:
   m_ObjectHideFlags: 0

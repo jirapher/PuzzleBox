@@ -90,6 +90,8 @@
     <Compile Include="Assets\Scripts\BroomBehavior.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\BlobTracker.cs" />
+    <Compile Include="Assets\Scripts\BlobsInScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

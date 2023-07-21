@@ -204,11 +204,13 @@ public class MusicScoreManager : MonoBehaviour
         populatorUnlock[instrumentNum] = true;
         nextPopulatorPosition++;
 
-        if(nextPopulatorPosition >= populatorPositions.Length)
+
+        //not needed if everything works correctly...
+        /*if(nextPopulatorPosition >= populatorPositions.Length)
         {
             //WHAT DO?!
             print("You've used up your positions");
-        }
+        }*/
     }
 
 

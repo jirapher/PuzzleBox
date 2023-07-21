@@ -103,9 +103,9 @@ MonoBehaviour:
   lines:
   - IS THAT A POWER GLO-
   - Oh no, it's stardust - because it sounds like stardust.
-  - Go twinkle your fingers and usher in a new era!
   charName: Stardust
   charSprite: {fileID: 2041868002, guid: cb6b092170f0f1847822e9e9c64125c5, type: 3}
+  isInstrument: 1
 --- !u!114 &8642527388889396618
 MonoBehaviour:
   m_ObjectHideFlags: 0

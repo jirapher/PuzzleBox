@@ -32,6 +32,13 @@ public class Speaker : MonoBehaviour
 
             if (ignore) { ignore = false; return; }
 
+            if (isInstrument)
+            {
+                DialogManager2.instance.StartInstrumentDialog(lines, charSprite, name, this.gameObject);
+                this.enabled = false;
+                return;
+            }
+
             DialogManager2.instance.StartNewDialog(lines, charSprite, name);
             ignore = true;
         }

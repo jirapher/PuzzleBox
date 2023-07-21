@@ -10,6 +10,8 @@ public class Cutscene : MonoBehaviour
     public Speaker[] speakers;
     private int speakerCount = 0;
 
+    private bool portAtPos2 = true;
+
     [Header("CS Config")]
     public GameObject[] offAtStart;
     private void Start()
@@ -57,6 +59,7 @@ public class Cutscene : MonoBehaviour
             yield return null;
         }
 
+        DialogManager2.instance.csDialog = false;
         UnnecessaryObjOn();
         SceneManager.LoadScene(5);
 

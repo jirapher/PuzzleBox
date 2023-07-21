@@ -103,9 +103,10 @@ MonoBehaviour:
   lines:
   - "Bro, you found a sh\u014D!"
   - "Fo sho, it's sho 'nuff a sh\u014D."
-  - But, like not for show, ya know?
-  charName: Harpy
+  - But like, not for show, ya know?
+  charName: "Sh\u014D"
   charSprite: {fileID: 1616214197, guid: cb6b092170f0f1847822e9e9c64125c5, type: 3}
+  isInstrument: 1
 --- !u!114 &8642527388889396618
 MonoBehaviour:
   m_ObjectHideFlags: 0
