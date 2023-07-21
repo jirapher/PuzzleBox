@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Well taht's a pretty weird thing to have lying around...
+  - Well that's a pretty weird thing to have lying around...
   charName: Squak Pipe
   charSprite: {fileID: 293154836, guid: cb6b092170f0f1847822e9e9c64125c5, type: 3}
   isInstrument: 1

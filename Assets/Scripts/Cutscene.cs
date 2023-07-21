@@ -10,8 +10,6 @@ public class Cutscene : MonoBehaviour
     public Speaker[] speakers;
     private int speakerCount = 0;
 
-    private bool portAtPos2 = true;
-
     [Header("CS Config")]
     public GameObject[] offAtStart;
     private void Start()

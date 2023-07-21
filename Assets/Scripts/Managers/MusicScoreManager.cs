@@ -56,13 +56,11 @@ public class MusicScoreManager : MonoBehaviour
             {
                 if(r.gameObject.tag == "Note")
                 {
-                    print("NOTE SELECT");
                     SetNoteDrag(r.gameObject);
                 }
 
                 if (r.gameObject.tag == "Populator")
                 {
-                    print("POPULATOR SELECT");
                     PopulateNote(r.gameObject);
                 }
             }
@@ -84,9 +82,7 @@ public class MusicScoreManager : MonoBehaviour
         if(Input.GetMouseButton(0) && dragging)
         {
             if(draggedItem == null) { return; }
-            //Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 newPos = Input.mousePosition;
-            //newPos.z = 0;
             draggedItem.transform.position = newPos;
         }
 

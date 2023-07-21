@@ -40,12 +40,33 @@ public class GameManager : MonoBehaviour
         timer.StopTimer();
     }
 
+    public void StopBKG()
+    {
+        audioMan.StopBKG();
+    }
 
-    #region Audio
+    public void LowerBKG()
+    {
+        audioMan.LowerBKG();
+    }
+
+    public void RaiseBKG()
+    {
+        audioMan.RaiseBKG();
+    }
+
+    public void StartBKG()
+    {
+        audioMan.PlayBKG(Random.Range(0, 1));
+    }
+
+
+    #region AudioRecorder
 
     public void OpenMusicInterface()
     {
-        if (musicInterface.activeInHierarchy) { musicInterface.SetActive(false); musicMan.TurnOffMusicMan(); return; }
+        if (musicInterface.activeInHierarchy) { CloseMusicInterface(); return; }
+        LowerBKG();
         musicInterface.SetActive(true);
         musicMan.TurnOnMusicMan();
         charController.SetIgnoreInput();
@@ -53,6 +74,7 @@ public class GameManager : MonoBehaviour
     }
     public void CloseMusicInterface()
     {
+        RaiseBKG();
         musicInterface.SetActive(false);
         musicMan.TurnOffMusicMan();
         charController.IgnoreInputOff();

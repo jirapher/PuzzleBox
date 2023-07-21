@@ -81,17 +81,17 @@
     <Compile Include="Assets\Scripts\Speaker.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\MusicScore\InstrumentActivator.cs" />
+    <Compile Include="Assets\Scripts\BlobTracker.cs" />
     <Compile Include="Assets\Scripts\MusicScore\NotePicker.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\StashedData.cs" />
     <Compile Include="Assets\Scripts\Scrapped Ideas\Dirt Growth Approach\DirtController.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\PlayerPosOnLoad.cs" />
+    <Compile Include="Assets\Scripts\BlobsInScene.cs" />
     <Compile Include="Assets\Scripts\Managers\MusicScoreManager.cs" />
     <Compile Include="Assets\Scripts\BroomBehavior.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\BlobTracker.cs" />
-    <Compile Include="Assets\Scripts\BlobsInScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

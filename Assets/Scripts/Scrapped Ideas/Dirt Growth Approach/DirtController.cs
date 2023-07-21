@@ -19,12 +19,16 @@ public class DirtController : MonoBehaviour
     private SpriteRenderer sr;
     //public bool dirtGrowing = false;
     private bool cleaned = false;
+
+    [Header("MovingValues")]
+    private Vector2 texOffset;
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         mat = sr.material;
         dirtAmount = dirty;
         SetDirt();
+        //StartCoroutine(RunShadeAdj());
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -52,6 +56,42 @@ public class DirtController : MonoBehaviour
         Invoke("BrushCooldown", .5f);
     }
 
+    /*private IEnumerator RunShadeAdj()
+    {
+        bool go = true;
+        float t = Random.Range(0.1f, 0.5f);
+
+        while(go)
+        {
+            t -= Time.deltaTime;
+            if(t <= 0)
+            {
+                ShaderAdjust();
+                t = Random.Range(0.1f, 0.5f);
+                yield return null;
+            }
+
+            yield return null;
+        }
+    }
+
+    private void ShaderAdjust()
+    {
+        Vector2 adj = new Vector2(Random.Range(0.05f, -0.05f), Random.Range(0.05f, -0.05f));
+
+        texOffset += adj;
+        //vec2
+        mat.SetVector("_DirtMapping", texOffset);
+        ScaleAdj(adj);
+    }
+
+    private void ScaleAdj(Vector2 adj)
+    {
+        Transform t = gameObject.transform;
+        t.localScale = new Vector3(t.localScale.x + adj.x, t.localScale.y + adj.y, t.localScale.z);
+        gameObject.transform.localScale = t.localScale;
+    }*/
+
     private void Cleaned()
     {
         if (cleaned) { return; }
@@ -77,6 +117,7 @@ public class DirtController : MonoBehaviour
     private void SetDirt()
     {
         mat.SetFloat("_DirtAmount", dirtAmount);
+        texOffset = mat.GetVector("_DirtMapping");
     }
 
     private void BrushCooldown()
@@ -86,7 +127,6 @@ public class DirtController : MonoBehaviour
 
     private void SpawnPrize()
     {
-        print("Should have spawned prize");
         Instantiate(itemTospawn, transform.position, Quaternion.identity, null);
     }
 }
