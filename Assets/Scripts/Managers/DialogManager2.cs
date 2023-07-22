@@ -19,8 +19,13 @@ public class DialogManager2 : MonoBehaviour
     public CharController player;
     public RectTransform portPos1, portPos2;
     private bool portAtPos1 = true;
+
+
     private GameObject unlockInstrumentObj;
     private bool instrumentDialog = false;
+    public Image instrumentPortrait;
+    public TMP_Text instrumentName;
+
     private void Start()
     {
         if (instance != null && instance != this)
@@ -58,9 +63,9 @@ public class DialogManager2 : MonoBehaviour
     {
         unlockInstrumentObj = instrument;
         instrumentDialog = true;
-        nameText.text = name;
+        instrumentName.text = name;
         allLines = lines;
-        curPortrait.sprite = pic;
+        instrumentPortrait.sprite = pic;
         StartDialog();
         player.SetIgnoreInput();
     }
@@ -78,6 +83,12 @@ public class DialogManager2 : MonoBehaviour
     {
         curLine = 0;
         curText.text = allLines[curLine];
+        if (instrumentDialog)
+        {
+            instrumentPortrait.gameObject.SetActive(true);
+            curPortrait.gameObject.SetActive(false);
+        }
+
         dialogPanel.SetActive(true);
         dialogActive = true;
         GameManager.instance.PauseTimer();
@@ -88,6 +99,8 @@ public class DialogManager2 : MonoBehaviour
         if (instrumentDialog)
         {
             Destroy(unlockInstrumentObj);
+            instrumentPortrait.gameObject.SetActive(false);
+            curPortrait.gameObject.SetActive(true);
         }
 
         if (csDialog)

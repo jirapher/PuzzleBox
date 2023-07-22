@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Ah yes, the Astral Resonizer, the calming resonance of the cosmoshorn
+  - Ah yes, the Astral Resonizer, the calming resonance of the cosmos
   charName: Astral Resonizer
   charSprite: {fileID: 1506260501, guid: 36def5abb0e80914e82fcdccfcc3e988, type: 3}
   isInstrument: 1

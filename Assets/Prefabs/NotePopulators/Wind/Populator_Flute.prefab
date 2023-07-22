@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475e4c443f4b0f746bed7858a2c1d24d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notePrefab: {fileID: 8642527388889396619, guid: 14070b0fc9b4e24408d25231828ae716, type: 3}
+  notePrefab: {fileID: 6808543561810105921, guid: 142f25d95c909354b88e96f9a832ae7c, type: 3}
 --- !u!222 &4258305176362227740
 CanvasRenderer:
   m_ObjectHideFlags: 0
