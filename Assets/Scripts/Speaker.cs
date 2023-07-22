@@ -11,6 +11,9 @@ public class Speaker : MonoBehaviour
     private bool canSpeak = false;
     private bool ignore = false;
 
+    [Header("CS-Specific Portrait Swap")]
+    public bool port1 = false;
+
     [Header("Instrument")]
     public bool isInstrument;
 

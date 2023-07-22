@@ -44,7 +44,7 @@ public class Cutscene : MonoBehaviour
         {
             while (dm.dialogActive) { yield return null; }
 
-            dm.StartCSDialog(speakers[curSpeaker].lines, speakers[curSpeaker].charSprite, speakers[curSpeaker].charName);
+            dm.StartCSDialog(speakers[curSpeaker].lines, speakers[curSpeaker].charSprite, speakers[curSpeaker].charName, speakers[curSpeaker].port1);
 
             curSpeaker++;
 

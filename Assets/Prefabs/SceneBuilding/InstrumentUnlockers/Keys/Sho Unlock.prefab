@@ -101,9 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - "Bro, you found a sh\u014D!"
-  - "Fo sho, it's sho 'nuff a sh\u014D."
-  - But like, not for show, ya know?
+  - "Hmmmm...some strange sort of humming instrument. I believe it's called a Sh\u014D"
   charName: "Sh\u014D"
   charSprite: {fileID: 1616214197, guid: cb6b092170f0f1847822e9e9c64125c5, type: 3}
   isInstrument: 1

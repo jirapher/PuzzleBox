@@ -17,8 +17,11 @@ public class DialogManager2 : MonoBehaviour
 
     public bool csDialog = false;
     public CharController player;
-    public RectTransform portPos1, portPos2;
-    private bool portAtPos1 = true;
+    public GameObject portPos1, portPos2;
+
+    //Portrait2
+    public Image curPortrait2;
+    public TMP_Text port2Name;
 
 
     private GameObject unlockInstrumentObj;
@@ -38,6 +41,7 @@ public class DialogManager2 : MonoBehaviour
         }
         curText.text = "";
         curLine = 0;
+        portPos2.SetActive(false);
     }
 
     private void Update()
@@ -70,12 +74,27 @@ public class DialogManager2 : MonoBehaviour
         player.SetIgnoreInput();
     }
 
-    public void StartCSDialog(string[] lines, Sprite pic, string name)
+    public void StartCSDialog(string[] lines, Sprite pic, string name, bool atPort1)
     {
         csDialog = true;
-        nameText.text = name;
+
         allLines = lines;
-        curPortrait.sprite = pic;
+
+        if (!atPort1)
+        {
+            port2Name.text = name;
+            curPortrait2.sprite = pic;
+            portPos2.SetActive(true);
+            portPos1.SetActive(false);
+        }
+        else
+        {
+            portPos1.SetActive(true);
+            portPos2.SetActive(false);
+            nameText.text = name;
+            curPortrait.sprite = pic;
+        }
+
         StartDialog();
     }
 
@@ -103,11 +122,6 @@ public class DialogManager2 : MonoBehaviour
             curPortrait.gameObject.SetActive(true);
         }
 
-        if (csDialog)
-        {
-            SwapPortraitPosition();
-        }
-
         instrumentDialog = false;
         curText.text = "";
         curLine = 0;
@@ -116,24 +130,6 @@ public class DialogManager2 : MonoBehaviour
         dialogPanel.SetActive(false);
         player.IgnoreInputOff();
         GameManager.instance.ResumeTimer();
-    }
-
-    public void SwapPortraitPosition()
-    {
-        if (portAtPos1)
-        {
-            curPortrait.GetComponent<RectTransform>().position = portPos2.position;
-            portAtPos1 = false;
-        }
-        else
-        {
-            curPortrait.GetComponent<RectTransform>().position = portPos1.position;
-        }
-    }
-
-    public void PortraitBackToPos1()
-    {
-        curPortrait.rectTransform.anchoredPosition = portPos1.anchoredPosition;
     }
 
     public void AdvanceDialog()

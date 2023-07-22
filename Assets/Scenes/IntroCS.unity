@@ -219,6 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &152671735 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9034471552658703911, guid: b97fade9a2a754a439c457dcbd467cb1, type: 3}
+  m_PrefabInstance: {fileID: 152671733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &311751807
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +235,7 @@ GameObject:
   - component: {fileID: 311751809}
   - component: {fileID: 311751808}
   m_Layer: 0
-  m_Name: Speaker
+  m_Name: Speaker1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,6 +259,7 @@ MonoBehaviour:
     and do it fast.
   charName: RA
   charSprite: {fileID: 1369198905, guid: 40a1730cb4bf790449b9c597492b5350, type: 3}
+  port1: 1
   isInstrument: 0
 --- !u!4 &311751809
 Transform:
@@ -269,6 +275,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &332985110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 332985112}
+  - component: {fileID: 332985111}
+  m_Layer: 0
+  m_Name: Speaker5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &332985111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332985110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbdc7b7fcd20f74eac8d3a50d0d092e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - You there! The janitor-type godlet thing reading this right now.
+  - You have 5 minutes to grab the music in Nu's brain before it's wiped out.
+  - Save as many instruments as you can. Then come back here to compose the soundtrack
+    that creates the new universe.
+  - "Be warned \u2014 Nu has a very dirty mind. "
+  - Use WASD or arrow keys to move
+  - Use the left mouse button to use your broom or interact
+  - Good luck!
+  charName: RA
+  charSprite: {fileID: -442632825, guid: 40a1730cb4bf790449b9c597492b5350, type: 3}
+  port1: 1
+  isInstrument: 0
+--- !u!4 &332985112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332985110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 682.361, y: 90.87846, z: 14.983225}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &525984413
 GameObject:
@@ -330,7 +393,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &561354479
 GameObject:
@@ -365,7 +428,9 @@ MonoBehaviour:
   speakers:
   - {fileID: 311751808}
   - {fileID: 1946149811}
+  - {fileID: 1771388298}
   - {fileID: 1605810785}
+  - {fileID: 332985111}
   offAtStart:
   - {fileID: 1315589730}
   - {fileID: 1315589727}
@@ -747,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7254724472414595694, guid: e985e5301ed1ebe4197748b0bd0a10ed, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7254724472414595694, guid: e985e5301ed1ebe4197748b0bd0a10ed, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1021,6 +1086,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1191547174670505261, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 152671735}
+    - target: {fileID: 1191547174670505261, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191547174738876742, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191547174738876742, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191547174738876742, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191547174738876742, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191547174738876742, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191547174738876742, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191547174738876742, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191547174738876742, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1191547174738876743, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1031,12 +1136,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1191547175015675257, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1191547175222642831, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1167933188}
+    - target: {fileID: 1191547175222642831, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: port2Name
+      value: 
+      objectReference: {fileID: 1315589728}
     - target: {fileID: 1191547175356044855, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
       propertyPath: musicMan
       value: 
@@ -1051,11 +1160,15 @@ PrefabInstance:
       objectReference: {fileID: 805584249}
     - target: {fileID: 1191547175647712518, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00024414062
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191547175647712518, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 1191547176197462761, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1191547176197462761, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1105,6 +1218,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2952531491038688227, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.868042
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240404101680137458, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 716.80005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240404101680137458, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 54.39807
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464880159852104169, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.868042
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961349761112349767, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.9996948
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576334971960735669, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+      propertyPath: m_Name
+      value: Name Text2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
 --- !u!1 &1315589727 stripped
@@ -1112,6 +1249,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1191547174680548924, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
   m_PrefabInstance: {fileID: 1315589726}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1315589728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5070094915792069333, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
+  m_PrefabInstance: {fileID: 1315589726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1315589729 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1191547175124184022, guid: f1c5cff80c4db6b41a41774e72b68c85, type: 3}
@@ -1150,7 +1298,7 @@ GameObject:
   - component: {fileID: 1605810786}
   - component: {fileID: 1605810785}
   m_Layer: 0
-  m_Name: Speaker (2)
+  m_Name: Speaker4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,16 +1320,9 @@ MonoBehaviour:
   - NU! Get back here!
   - '!$%&! chaos gods!'
   - ...
-  - You there! The janitor-type godlet thing reading this right now.
-  - You have 5 minutes to grab the music in Nu's brain before it's wiped out.
-  - Save as many instruments as you can. Then come back here to compose the soundtrack
-    that creates the new universe.
-  - "Be warned \u2014 Nu has a very dirty mind. "
-  - Use WASD or arrow keys to move
-  - Use the left mouse button to use your broom or interact
-  - Good luck!
   charName: RA
-  charSprite: {fileID: -442632825, guid: 40a1730cb4bf790449b9c597492b5350, type: 3}
+  charSprite: {fileID: 1369198905, guid: 40a1730cb4bf790449b9c597492b5350, type: 3}
+  port1: 1
   isInstrument: 0
 --- !u!4 &1605810786
 Transform:
@@ -1190,6 +1331,56 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605810784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 682.361, y: 90.87846, z: 14.983225}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1771388297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1771388299}
+  - component: {fileID: 1771388298}
+  m_Layer: 0
+  m_Name: Speaker3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1771388298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771388297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbdc7b7fcd20f74eac8d3a50d0d092e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - Just grab the music and I'll smell ya later.
+  charName: NU
+  charSprite: {fileID: 1914284788, guid: 63ca8b3141dd0064a9a4763d0fb49576, type: 3}
+  port1: 0
+  isInstrument: 0
+--- !u!4 &1771388299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771388297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 682.361, y: 90.87846, z: 14.983225}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1209,7 +1400,7 @@ GameObject:
   - component: {fileID: 1946149812}
   - component: {fileID: 1946149811}
   m_Layer: 0
-  m_Name: Speaker (1)
+  m_Name: Speaker2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1229,9 +1420,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Now? This endless rebirth cycle is a drag, man. I just wanna rock!
-  - Whoops, that's Anubis on the other line. Grab the music and I'll smell ya later.
   charName: NU
   charSprite: {fileID: 1290077442, guid: 63ca8b3141dd0064a9a4763d0fb49576, type: 3}
+  port1: 0
   isInstrument: 0
 --- !u!4 &1946149812
 Transform:
@@ -1291,5 +1482,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
