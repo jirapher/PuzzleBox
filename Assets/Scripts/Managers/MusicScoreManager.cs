@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MusicScoreManager : MonoBehaviour
 {
     public bool musicMenuUp = false;
-    public CharController player;
 
     [Header("Note Handling")]
     public LayerMask selectableLayer;
@@ -104,6 +103,8 @@ public class MusicScoreManager : MonoBehaviour
         }
     }
 
+
+
     private List<RaycastResult> UIRaycast()
     {
         ped = new PointerEventData(events);
@@ -166,7 +167,6 @@ public class MusicScoreManager : MonoBehaviour
     public void TurnOnMusicMan()
     {
         musicMenuUp = true;
-        player.SetIgnoreInput();
         if(allCurrentNotes.Count > 0)
         {
             foreach(GameObject n in allCurrentNotes)
@@ -178,7 +178,6 @@ public class MusicScoreManager : MonoBehaviour
 
     public void TurnOffMusicMan()
     {
-        player.IgnoreInputOff();
 
         if (allCurrentNotes.Count > 0)
         {
@@ -199,14 +198,6 @@ public class MusicScoreManager : MonoBehaviour
         Instantiate(allPopulators[instrumentNum], populatorPositions[nextPopulatorPosition].position, Quaternion.identity, populatorPositions[nextPopulatorPosition]);
         populatorUnlock[instrumentNum] = true;
         nextPopulatorPosition++;
-
-
-        //not needed if everything works correctly...
-        /*if(nextPopulatorPosition >= populatorPositions.Length)
-        {
-            //WHAT DO?!
-            print("You've used up your positions");
-        }*/
     }
 
 

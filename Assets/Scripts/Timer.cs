@@ -72,7 +72,14 @@ public class Timer : MonoBehaviour
     private void DisplayWarning()
     {
         warningDisplay.SetActive(true);
-        Invoke("WarningOff", 2f);
+        Invoke("WarningOff", 3f);
+    }
+
+    public void PlayerToolTip(string tip)
+    {
+        warningDisplayTxt.text = tip;
+        warningDisplay.SetActive(true);
+        Invoke("WarningOff", 3f);
     }
 
     private void WarningOff()

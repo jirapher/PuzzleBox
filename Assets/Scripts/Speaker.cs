@@ -34,12 +34,12 @@ public class Speaker : MonoBehaviour
 
             if (isInstrument)
             {
-                DialogManager2.instance.StartInstrumentDialog(lines, charSprite, name, this.gameObject);
+                DialogManager2.instance.StartInstrumentDialog(lines, charSprite, charName, this.gameObject);
                 this.enabled = false;
                 return;
             }
 
-            DialogManager2.instance.StartNewDialog(lines, charSprite, name);
+            DialogManager2.instance.StartNewDialog(lines, charSprite, charName);
             ignore = true;
         }
     }

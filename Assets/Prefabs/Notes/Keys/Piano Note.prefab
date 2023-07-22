@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7469452509163375354
+--- !u!1 &8153593033186973165
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3068328382134762874}
-  - component: {fileID: 7469452509163375352}
-  - component: {fileID: 7469452509163375355}
-  - component: {fileID: 7469452509163375359}
-  - component: {fileID: 2815079416178926748}
-  - component: {fileID: 139204550805922144}
+  - component: {fileID: 4331150820658963053}
+  - component: {fileID: 8153593033186973167}
+  - component: {fileID: 8153593033186973164}
+  - component: {fileID: 8153593033186973160}
+  - component: {fileID: 3575463384134138763}
+  - component: {fileID: 1684697126590185079}
   m_Layer: 6
   m_Name: Piano Note
   m_TagString: Note
@@ -21,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &3068328382134762874
+--- !u!224 &4331150820658963053
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7469452509163375354}
+  m_GameObject: {fileID: 8153593033186973165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 75, y: 75, z: 1}
@@ -41,26 +41,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0.8, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7469452509163375352
+--- !u!114 &8153593033186973167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7469452509163375354}
+  m_GameObject: {fileID: 8153593033186973165}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aa7a4586ce375f43b19c98cee97f27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   possibleNotes: 000000000100000002000000030000000400000005000000
---- !u!58 &7469452509163375355
+--- !u!58 &8153593033186973164
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7469452509163375354}
+  m_GameObject: {fileID: 8153593033186973165}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -70,14 +70,14 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
---- !u!50 &7469452509163375359
+--- !u!50 &8153593033186973160
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7469452509163375354}
+  m_GameObject: {fileID: 8153593033186973165}
   m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -91,21 +91,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!222 &2815079416178926748
+--- !u!222 &3575463384134138763
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7469452509163375354}
+  m_GameObject: {fileID: 8153593033186973165}
   m_CullTransparentMesh: 1
---- !u!114 &139204550805922144
+--- !u!114 &1684697126590185079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7469452509163375354}
+  m_GameObject: {fileID: 8153593033186973165}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}

@@ -8,6 +8,7 @@ public class SceneTransition : MonoBehaviour
     public int sceneToLoad = 0;
     private CamTransition cam;
     public string transitionName;
+
     private void Start()
     {
         cam = Camera.main.GetComponent<CamTransition>();
@@ -16,7 +17,7 @@ public class SceneTransition : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            cam.transitionName = transitionName;
+            GameManager.instance.SetTransitionName(transitionName);
             StartCoroutine(cam.Fade(1, true, sceneToLoad));
         }
     }

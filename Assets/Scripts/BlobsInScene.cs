@@ -10,7 +10,7 @@ public class BlobsInScene : MonoBehaviour
     {
         foreach(GameObject blob in blobsInScene)
         {
-            if (BlobTracker.instance.CheckBlob(blob.GetInstanceID().ToString()))
+            if (BlobTracker.instance.CheckBlob(blob.name))
             {
                 Destroy(blob);
             }

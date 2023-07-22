@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public Timer timer;
     public GameObject musicInterface;
 
+    private bool openMusicTipDisplayed = false;
+
+    private string transitionName;
     private void Start()
     {
         if (instance != null && instance != this)
@@ -21,7 +24,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-        CloseMusicInterface();
+        CloseMusicOnStart();
         timer.StartTimer();
     }
 
@@ -60,19 +63,51 @@ public class GameManager : MonoBehaviour
         audioMan.PlayBKG(Random.Range(0, 1));
     }
 
+    public void SetPlayerNotice(string notice)
+    {
+        timer.PlayerToolTip(notice);
+    }
+
+    public void SetTransitionName(string name)
+    {
+        transitionName = name;
+    }
+
+    public string GetTransitionName()
+    {
+        return transitionName;
+    }
+
 
     #region AudioRecorder
 
     public void OpenMusicInterface()
     {
+        if (!openMusicTipDisplayed)
+        {
+            SetPlayerNotice("Drag and drop instrument icons to build your song. Right click to remove notes.");
+            openMusicTipDisplayed = true;
+        }
+
         if (musicInterface.activeInHierarchy) { CloseMusicInterface(); return; }
         LowerBKG();
         musicInterface.SetActive(true);
         musicMan.TurnOnMusicMan();
         charController.SetIgnoreInput();
         PauseTimer();
+        audioMan.PlaySFX(5);
     }
     public void CloseMusicInterface()
+    {
+        RaiseBKG();
+        musicInterface.SetActive(false);
+        musicMan.TurnOffMusicMan();
+        charController.IgnoreInputOff();
+        ResumeTimer();
+        audioMan.PlaySFX(4);
+    }
+
+    private void CloseMusicOnStart()
     {
         RaiseBKG();
         musicInterface.SetActive(false);

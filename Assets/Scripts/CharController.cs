@@ -59,7 +59,7 @@ public class CharController : MonoBehaviour
 
         moveInput = value.Get<Vector2>();
 
-        if(moveInput == lastMoveInput) { return; }
+        //if(moveInput == lastMoveInput) { return; }
 
         if (moveInput == Vector2.zero) { walking = false; } else { walking = true; }
 
@@ -86,7 +86,8 @@ public class CharController : MonoBehaviour
 
         anim.SetTrigger("Attack");
         atkCoolDown = true;
-        Invoke("AttackCooldown", 0.8f);
+        Invoke("AttackCooldown", 0.4f);
+        AudioManager.instance.PlaySFX(Random.Range(1, 3));
     }
 
     private void AttackCooldown()

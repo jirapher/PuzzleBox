@@ -99,7 +99,8 @@ public class DirtController : MonoBehaviour
         SpawnPrize();
         StartCoroutine(FadeSprite());
         particles.SetActive(true);
-        BlobTracker.instance.AddBlob(gameObject.GetInstanceID().ToString());
+        BlobTracker.instance.AddBlob(gameObject.name);
+        AudioManager.instance.PlaySFX(3);
         Destroy(this.gameObject, 1.5f);
     }
 
