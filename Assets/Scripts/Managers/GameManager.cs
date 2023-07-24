@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
     {
         if (!openMusicTipDisplayed)
         {
-            SetPlayerNotice("Drag and drop instrument icons to build your song. Right click to remove notes.");
+            musicMan.SetMusicNotice("Drag and drop instrument icons to build your song. Right click to remove notes.");
             openMusicTipDisplayed = true;
         }
 

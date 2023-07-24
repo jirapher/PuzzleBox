@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -6,6 +7,11 @@ using UnityEngine.UI;
 public class MusicScoreManager : MonoBehaviour
 {
     public bool musicMenuUp = false;
+
+    [Header("NoticePanel")]
+    public GameObject musicNoticePanel;
+    public TMP_Text noticeTxt;
+    public Button finalYes, finalNo;
 
     [Header("Note Handling")]
     public LayerMask selectableLayer;
@@ -40,8 +46,8 @@ public class MusicScoreManager : MonoBehaviour
         }
 
         InitPopUnlock();
-        
 
+        musicNoticePanel.SetActive(false);
         musicMenuUp = false;
     }
     private void Update()
@@ -135,6 +141,8 @@ public class MusicScoreManager : MonoBehaviour
         }
 
         allCurrentNotes.Clear();
+
+        scoreAnim.SetTrigger("Reset");
     }
 
     public void DeleteNote(GameObject note)
@@ -157,10 +165,17 @@ public class MusicScoreManager : MonoBehaviour
     public void StopPlaying()
     {
         scoreAnim.speed = 0;
+        ResetAnim();
+    }
+
+    public void ResetAnim()
+    {
+        scoreAnim.SetTrigger("Reset");
     }
 
     public void StartPlaying()
     {
+        scoreAnim.SetTrigger("Play");
         scoreAnim.speed = 1;
     }
 
@@ -174,6 +189,8 @@ public class MusicScoreManager : MonoBehaviour
                 n.gameObject.SetActive(true);
             }
         }
+
+        scoreAnim.SetTrigger("Play");
     }
 
     public void TurnOffMusicMan()
@@ -188,7 +205,7 @@ public class MusicScoreManager : MonoBehaviour
         }
 
         musicMenuUp = false;
-
+        scoreAnim.SetTrigger("Play");
     }
 
     public void UnlockInstrument(int instrumentNum)
@@ -198,6 +215,39 @@ public class MusicScoreManager : MonoBehaviour
         Instantiate(allPopulators[instrumentNum], populatorPositions[nextPopulatorPosition].position, Quaternion.identity, populatorPositions[nextPopulatorPosition]);
         populatorUnlock[instrumentNum] = true;
         nextPopulatorPosition++;
+    }
+
+    public void SetMusicNotice(string notice)
+    {
+        noticeTxt.text = notice;
+        musicNoticePanel.SetActive(true);
+        Invoke("NoticeOff", 4f);
+    }
+
+    public void SetFinalNotice()
+    {
+        //set buttons active
+        finalYes.gameObject.SetActive(true);
+        finalNo.gameObject.SetActive(true);
+        noticeTxt.text = "Are you sure you're ready to submit? This is what will usher in a new world.";
+        musicNoticePanel.SetActive(true);
+    }
+
+    public void FinalYes()
+    {
+
+    }
+
+    public void FinalNo()
+    {
+        musicNoticePanel.SetActive(false);
+        finalYes.gameObject.SetActive(false);
+        finalNo.gameObject.SetActive(false);
+    }
+
+    private void NoticeOff()
+    {
+        musicNoticePanel.SetActive(false);
     }
 
 
@@ -220,5 +270,12 @@ public class MusicScoreManager : MonoBehaviour
     {
         GameManager.instance.CloseMusicInterface();
     }
+
+    public void FinalSubmission()
+    {
+
+    }
+
+
 
 }

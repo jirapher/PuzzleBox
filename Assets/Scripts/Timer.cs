@@ -109,7 +109,7 @@ public class Timer : MonoBehaviour
     {
         if (!firstToken)
         {
-            warningDisplayTxt.text = "You found a tempo token. These delay doomsday just a bit!";
+            warningDisplayTxt.text = "You found a tempo token! These delay doomsday just a bit.";
             DisplayWarning();
             firstToken = true;
         }
