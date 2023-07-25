@@ -29,6 +29,9 @@
         },
         {
             "m_Id": "8ea57bb48bf444c88660a05305f39358"
+        },
+        {
+            "m_Id": "f7e5c16e9fdb4384981230b134e94637"
         }
     ],
     "m_Keywords": [],
@@ -143,6 +146,9 @@
         },
         {
             "m_Id": "2cffbaf00f3d4006b272ec69dc7037ee"
+        },
+        {
+            "m_Id": "c4327f84aef94d99955afce34c1811a6"
         }
     ],
     "m_GroupDatas": [],
@@ -201,7 +207,7 @@
                 "m_Node": {
                     "m_Id": "c77152597e854871aebd44419bf4e940"
                 },
-                "m_SlotId": 1
+                "m_SlotId": 0
             }
         },
         {
@@ -481,7 +487,7 @@
                 "m_Node": {
                     "m_Id": "c77152597e854871aebd44419bf4e940"
                 },
-                "m_SlotId": 0
+                "m_SlotId": 1
             }
         },
         {
@@ -1849,10 +1855,10 @@
     "m_Guid": {
         "m_GuidSerialized": "c8efe0da-304e-4aaf-b2c3-67eb668d286c"
     },
-    "m_Name": "DirtColor",
+    "m_Name": "TextureColor",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "DirtColor",
-    "m_DefaultReferenceName": "_DirtColor",
+    "m_RefNameGeneratedByDisplayName": "TextureColor",
+    "m_DefaultReferenceName": "_TextureColor",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -2455,6 +2461,9 @@
         },
         {
             "m_Id": "8ea57bb48bf444c88660a05305f39358"
+        },
+        {
+            "m_Id": "f7e5c16e9fdb4384981230b134e94637"
         }
     ]
 }
@@ -2872,9 +2881,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 2332.666748046875,
-            "y": -373.3332824707031,
-            "width": 125.333251953125,
+            "x": 2120.0,
+            "y": -361.33331298828127,
+            "width": 146.666748046875,
             "height": 35.999969482421878
         }
     },
@@ -3931,6 +3940,41 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "c4327f84aef94d99955afce34c1811a6",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 3785.333251953125,
+            "y": -19.333351135253908,
+            "width": 126.0,
+            "height": 36.0000114440918
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "c77861c78cf04304b2b8717e398d5c42"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "f7e5c16e9fdb4384981230b134e94637"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.ColorRGBMaterialSlot",
     "m_ObjectId": "c44d56e6273849218fccfdfc62ad8c2f",
     "m_Id": 0,
@@ -4051,10 +4095,25 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "c77861c78cf04304b2b8717e398d5c42",
+    "m_Id": 0,
+    "m_DisplayName": "TestFloat",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "cb254d5d82354475ad1bb490544d888a",
     "m_Id": 0,
-    "m_DisplayName": "DirtColor",
+    "m_DisplayName": "TextureColor",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -4512,6 +4571,33 @@
         "y": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "f7e5c16e9fdb4384981230b134e94637",
+    "m_Guid": {
+        "m_GuidSerialized": "4cc18478-ceb5-4db8-acf5-e309c5177847"
+    },
+    "m_Name": "TestFloat",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "TestFloat",
+    "m_DefaultReferenceName": "_TestFloat",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
 }
 
 {

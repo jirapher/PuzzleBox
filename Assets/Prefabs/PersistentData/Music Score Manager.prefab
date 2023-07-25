@@ -235,7 +235,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!222 &5430081463935180470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -525,7 +525,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!222 &593540578022606870
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2247,7 +2247,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!222 &7254724471066336871
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2596,7 +2596,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!222 &7254724471204952164
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3187,7 +3187,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!222 &7254724471425879127
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5215,7 +5215,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!222 &7254724472528947813
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5452,7 +5452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3234986923581760240
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5610,7 +5610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3618525989590113
 RectTransform:
   m_ObjectHideFlags: 0
