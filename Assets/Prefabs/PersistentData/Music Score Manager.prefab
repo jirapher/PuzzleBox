@@ -5003,6 +5003,16 @@ MonoBehaviour:
   - {fileID: 6935614237035646249}
   ray: {fileID: 7254724472414595683}
   events: {fileID: 0}
+  bitsToKeepOn:
+  - {fileID: 7254724471230010800}
+  - {fileID: 7254724471689388224}
+  - {fileID: 7254724472026681636}
+  - {fileID: 5108566016810169872}
+  bitsToTurnOff:
+  - {fileID: 7254724472190888983}
+  - {fileID: 7254724471999892466}
+  - {fileID: 7254724471602176162}
+  - {fileID: 7254724472101548952}
 --- !u!1 &7254724472470535949
 GameObject:
   m_ObjectHideFlags: 0
@@ -5555,7 +5565,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8717747087744032068}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7254724472414595695}
+        m_TargetAssemblyTypeName: MusicScoreManager, Assembly-CSharp
+        m_MethodName: FinalYes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7858002142103754530
 GameObject:
   m_ObjectHideFlags: 0
@@ -5713,7 +5735,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8336599957768520757}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7254724472414595695}
+        m_TargetAssemblyTypeName: MusicScoreManager, Assembly-CSharp
+        m_MethodName: FinalNo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8668963827330785374
 GameObject:
   m_ObjectHideFlags: 0

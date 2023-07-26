@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MusicScoreManager : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class MusicScoreManager : MonoBehaviour
     public PointerEventData ped;
     public GraphicRaycaster ray;
     public EventSystem events;
+
+    [Header("EndBit")]
+    public GameObject[] bitsToKeepOn;
+    public GameObject[] bitsToTurnOff;
 
     private void Start()
     {
@@ -208,6 +213,29 @@ public class MusicScoreManager : MonoBehaviour
         scoreAnim.SetTrigger("Play");
     }
 
+    public void FinalActivation()
+    {
+        if (allCurrentNotes.Count > 0)
+        {
+            foreach (GameObject n in allCurrentNotes)
+            {
+                n.gameObject.SetActive(true);
+            }
+        }
+
+        for(int i = 0; i < bitsToTurnOff.Length; i++)
+        {
+            bitsToTurnOff[i].SetActive(false);
+        }
+
+        for(int i = 0; i < bitsToKeepOn.Length; i++)
+        {
+            bitsToKeepOn[i].SetActive(true);
+        }
+
+        scoreAnim.SetTrigger("Play");
+    }
+
     public void UnlockInstrument(int instrumentNum)
     {
         if (populatorUnlock[instrumentNum] == true) { return; }
@@ -235,7 +263,8 @@ public class MusicScoreManager : MonoBehaviour
 
     public void FinalYes()
     {
-
+        //load scene
+        SceneManager.LoadScene(6);
     }
 
     public void FinalNo()
@@ -273,8 +302,68 @@ public class MusicScoreManager : MonoBehaviour
 
     public void FinalSubmission()
     {
+        SetFinalNotice();
+    }
+
+    public string ScoreCalc()
+    {
+        int instrumentsFound = 0;
+        int notesUsed = 0;
+
+        for(int i = 0; i < populatorUnlock.Length; i++)
+        {
+            if (populatorUnlock[i] == true)
+            {
+                instrumentsFound++;
+            }
+        }
+
+        notesUsed = allCurrentNotes.Count;
+
+        if(notesUsed >= 15)
+        {
+            return ReturnCommentOne();
+        }
+
+        if(notesUsed >= 20)
+        {
+            return ReturnCommentTwo();
+        }
+
+        if(instrumentsFound > 5 && notesUsed > 5)
+        {
+            return ReturnCommentThree();
+        }
+
+        return ReturnCommentFour();
 
     }
+
+    private string ReturnCommentOne()
+    {
+        //all instruments
+        return "HOT DANG! Look at you finding all the instruments and saving all the musics. Future Earth is sure to be full of liberal arts majors.";
+    }
+
+    private string ReturnCommentTwo()
+    {
+        //>20 notes
+        return "Wow! You really mashed a lot of notes in your score. You're a regular ol' Wolfgang Mozart!";
+    }
+
+    private string ReturnCommentThree()
+    {
+        //<20 notes
+        return "Huh. Ya know, an effort was made. Your new wave of people are sure to enjoy avant-garde experimental music.";
+    }
+
+    private string ReturnCommentFour()
+    {
+        //lackluster
+        return "Hmm... Art (or lack thereof) is still art I guess. Earth 2 might be a little more quiet.";
+    }
+
+
 
 
 

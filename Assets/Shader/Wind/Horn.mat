@@ -73,12 +73,17 @@ Material:
     - _OutlineAmount: 0.1
     - _SnowAmount: 0.44
     - _Test: 2.19
+    - _TestFloat: 0
     m_Colors:
     - _Color: {r: 0.12941177, g: 0.25, b: 0.17941177, a: 1}
     - _DirtColor: {r: 1, g: 1, b: 1, a: 0}
-    - _DirtMapping: {r: 0.94, g: 1, b: 0, a: 0}
+    - _DirtMapping: {r: 1.56, g: 1.76, b: 0, a: 0}
+    - _DirtOffset: {r: 0, g: 0, b: 0, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.52994084, g: 0.23137252, b: 0.9607843, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TexMapping: {r: 2.2, g: 2.2, b: 0, a: 0}
+    - _TexOffset: {r: -0.21, g: -0.09, b: 0, a: 0}
+    - _TextureColor: {r: 1, g: 1, b: 1, a: 0}
     - _TextureOffset: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
